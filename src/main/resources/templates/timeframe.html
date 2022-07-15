@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timeframe</title>
+</head>
+<body>
+<h3> Timeframe Currency</h3>
+<hr>
+<table>
+    <thead style="max-width: 200px">
+    <tr>
+        <th>Source Currency</th>
+        <th>Currency</th>
+    </tr>
+    </thead>
+    <tbody style="max-width: 200px; word-break: break-word">
+    <tr th:each="tempCurrency:${currencyTime}">
+        <td th:text="${tempCurrency.source}"></td>
+        <td><ul th:each="quote : ${currencyTime.quotes}">
+            <li th:text="${quote}"></li>
+        </ul>
+        </td>
+    </tr></tbody>
+</table>
+</body>
+</html>

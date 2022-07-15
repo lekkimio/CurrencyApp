@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live</title>
+</head>
+<body>
+<h3> Live Currency</h3>
+<hr>
+
+<table>
+    <thead>
+        <tr>
+            <th>Source Currency</th>
+            <th>Currency</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:each="tempCurrency:${currencyLive}">
+        <td th:text="${tempCurrency.source}"></td>
+        <td style="max-width: 1200px; word-break: break-word" th:each="quote : ${tempCurrency.quotes}" th:text="${quote}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
